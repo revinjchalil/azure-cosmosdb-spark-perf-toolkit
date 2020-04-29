@@ -1,0 +1,1 @@
+WrappedArray(able, -268098833.42) WrappedArray(anti, -132165177.32) WrappedArray(ation, -306176893.84) WrappedArray(bar, -231627328.99) WrappedArray(cally, -195921391.76) WrappedArray(eing, -402523128.99) WrappedArray(ese, -464442519.41) WrappedArray(n st, -34147770.07) WrappedArray(ought, -202933403.77) WrappedArray(pri, -32744521.73)

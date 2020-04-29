@@ -1,0 +1,1 @@
+WrappedArray(-4387528818.81, null, null, 2, 1) WrappedArray(-1123828341.74, AL, null, 1, 1) WrappedArray(-1460364034.73, SD, null, 1, 2) WrappedArray(-1803336442.34, TN, null, 1, 3) WrappedArray(-1123828341.74, AL, Walker County, 0, 1) WrappedArray(-1460364034.73, SD, Ziebach County, 0, 1) WrappedArray(-1803336442.34, TN, Williamson County, 0, 1)

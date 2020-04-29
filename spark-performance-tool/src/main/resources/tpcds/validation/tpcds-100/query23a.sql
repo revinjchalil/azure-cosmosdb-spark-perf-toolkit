@@ -1,0 +1,1 @@
+WrappedArray(934073.92)

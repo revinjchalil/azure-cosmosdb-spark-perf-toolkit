@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.github.databricks</groupId>
+  <artifactId>spark-sql-perf_2.11</artifactId>
+  <version>0.5.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20200319184813</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.5.1-SNAPSHOT</value>
+        <updated>20200319184813</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.5.1-SNAPSHOT</value>
+        <updated>20200319181142</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

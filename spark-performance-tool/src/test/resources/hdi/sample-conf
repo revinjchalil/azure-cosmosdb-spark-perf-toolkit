@@ -1,0 +1,33 @@
+{
+  "jarFilePath": "abfs://some/store/spark-performance-toolkit-1.0-SNAPSHOT-jar-with-dependencies.jar",
+  "conf": {"spark.sql.broadcastTimeout": "-1"},
+  "userName": "some-userName",
+  "userPassword": "some-password",
+  "livyUri": "https://some/livy/host/endpoint",
+  "applicationArgs": [
+    "--rootDir",
+    "tpcds1/",
+    "--databaseName",
+    "tpcds1",
+    "--scaleFactor",
+    "1",
+    "--format",
+    "parquet",
+    "--dataGenToolkitPath",
+    "abfs://some-store/tmp/new_tools/tpcds-kit-tools/",
+    "--metricsOutputPath",
+    "abfs://some-store/tmp/output",
+    "--queriesToRun",
+    "query1,query2,query3,query4,query5",
+    "--queriesToSkip",
+    "query1,query4",
+    "--runsPerQuery",
+    "3",
+    "--dataGenPartitionsToRun",
+    "60",
+    "--tagName",
+    "sometag",
+    "--perfSuiteType",
+    "TPCDS"
+  ]
+}

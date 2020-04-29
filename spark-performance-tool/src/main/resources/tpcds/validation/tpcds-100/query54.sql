@@ -1,0 +1,1 @@
+WrappedArray(8976, 1, 448800) WrappedArray(9965, 1, 498250) WrappedArray(13965, 1, 698250) WrappedArray(20456, 1, 1022800) WrappedArray(20672, 1, 1033600) WrappedArray(21663, 1, 1083150) WrappedArray(22938, 1, 1146900) WrappedArray(23536, 1, 1176800) WrappedArray(26799, 1, 1339950) WrappedArray(26978, 1, 1348900) WrappedArray(28874, 1, 1443700) WrappedArray(36542, 1, 1827100)

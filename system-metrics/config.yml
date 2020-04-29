@@ -1,0 +1,27 @@
+version: 0.0.1
+
+# config file for dropwizard application
+server:
+  applicationConnectors:
+  - type: http
+    port: 9000
+  adminConnectors:
+  - type: http
+    port: 9001
+  requestLog:
+    appenders:
+      - type: file
+        currentLogFilename: /var/log/collectd-server-access.log
+        threshold: ALL
+        archive: true
+        archivedLogFilenamePattern: /var/log/collectd-server-access-%d.log.gz
+        archivedFileCount: 3
+logging:
+  level: INFO
+  appenders:
+    - type: file
+      currentLogFilename: /var/log/collectd-server-application.log
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: /var/log/collectd-server-application-%d.log
+      archivedFileCount: 3

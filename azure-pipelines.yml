@@ -1,0 +1,64 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'install'
+
+# Azure file copy
+# Copy files to Azure Blob Storage or virtual machines
+- task: AzureCLI@2
+  displayName: Azure CLI
+  inputs:
+    azureSubscription: "upload spark-perf-jar"
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      az --version
+      az account show
+      storageAccountName=tpcdsperfsetup
+      containerName=perfsetup
+      perfJarSourcePath=/home/vsts/work/1/s/spark-performance-tool/target/spark-performance-tool-1.0-SNAPSHOT.jar
+      perfJarBlobName=spark-performance-tool-1.0-SNAPSHOT.jar
+      az storage blob upload \
+          -c $containerName \
+          -f $perfJarSourcePath \
+          -n $perfJarBlobName \
+          --account-name $storageAccountName
+      systemMetricsJarSourcePath=/home/vsts/work/1/s/system-metrics/target/system-metrics-1.0-SNAPSHOT.jar
+      systemMetricsJarBlobName=system-metrics-1.0-SNAPSHOT.jar
+      az storage blob upload \
+          -c $containerName \
+          -f $systemMetricsJarSourcePath \
+          -n $systemMetricsJarBlobName \
+          --account-name $storageAccountName
+      systemMetricsStartScriptSourcePath=/home/vsts/work/1/s/system-metrics/scripts/system-metrics-server-start.sh
+      systemMetricsStartScriptBlobName=system-metrics-server-start.sh
+      az storage blob upload \
+          -c $containerName \
+          -f $systemMetricsStartScriptSourcePath \
+          -n $systemMetricsStartScriptBlobName \
+          --account-name $storageAccountName
+      systemMetricsStopScriptSourcePath=/home/vsts/work/1/s/system-metrics/scripts/system-metrics-server-stop.sh
+      systemMetricsStopScriptBlobName=system-metrics-server-stop.sh
+      az storage blob upload \
+          -c $containerName \
+          -f $systemMetricsStopScriptSourcePath \
+          -n $systemMetricsStopScriptBlobName \
+          --account-name $storageAccountName
