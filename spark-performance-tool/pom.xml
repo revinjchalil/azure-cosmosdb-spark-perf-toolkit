@@ -14,7 +14,7 @@
 
   <properties>
     <commons.cli.version>1.2</commons.cli.version>
-    <com.fasterxml.jackson.version>2.6.7</com.fasterxml.jackson.version>
+    <com.fasterxml.jackson.version>2.12.1</com.fasterxml.jackson.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <scala.io.file.version>0.4.3-1</scala.io.file.version>
